@@ -18,5 +18,6 @@ print (b + 5)
 
 
 x = ShadowPal()
+print (x.decideNeed())
 
         

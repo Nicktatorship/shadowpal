@@ -11,6 +11,9 @@ class JobSkill(object):
     def __str__(self):
         return random.choice(self._responses)
         
+    def __str__(self):
+        return random.choice(self._responses)
+        
     ''' An adjective for skill strength, scale from 1 to 5 '''
     def get_scale(self):
         if (self._scale == 1):

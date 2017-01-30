@@ -1,14 +1,20 @@
+'''
+
+The runner for all things ShadowPal. 
+
+ShadowPal is your friend.
+
+ShadowPal is here to help.
+
+'''
+
 from jobskill import JobSkill
 from skillmatrix import SkillMatrix
 
-a = SkillMatrix()
-a.set_formal_tone(False)
-a.populate_skills()
-b = a.get_skill("cpp")
-print a.list_skills()
-print b
+a = SkillMatrix("informal")
 
-req_list = ["cpp", "oo", "team", "degree", "games", "challenge", "vers"]
+
+req_list = ["sportsing", "pizza"]
 
 for skillref in req_list:
     print (a.get_skill(skillref))

@@ -1,23 +1,15 @@
-from shadowpal import ShadowPal
-from vector import Vector
+from jobskill import JobSkill
+from skillmatrix import SkillMatrix
 
-b = Vector(1,2,3)
-c = Vector(-2,1,-1)
+a = SkillMatrix()
+a.set_formal_tone(False)
+a.populate_skills()
+b = a.get_skill("cpp")
+print a.list_skills()
+print b
 
-print(b.product())
-print(b)
+req_list = ["cpp", "oo", "team", "degree", "games", "challenge", "vers"]
 
-print (c)
-
-b + c
-b + 355
-
-print (b + c)
-
-print (b + 5)
-
-
-x = ShadowPal()
-print (x.decideNeed())
-
+for skillref in req_list:
+    print (a.get_skill(skillref))
         

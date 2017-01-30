@@ -16,15 +16,4 @@ class Vector(object):
     def product(self):
         return self.x * self.y * self.z
         
-    def intersect(self, component):
-        if isinstance(component, Vector):
-            _altx = component.x
-            _alty = component.y
-            _altz = component.z
-            
-            
-            
-        else:
-            return false
-        
         

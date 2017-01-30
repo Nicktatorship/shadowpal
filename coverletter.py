@@ -2,9 +2,10 @@ from skillmatrix import SkillMatrix
 from joblisting import JobListing
 
 class CoverLetter(object):
-    def __init__(self, job, skillset):
+    def __init__(self, job, skillset, tone="formal"):
         self._skillset  = skillset
         self._job       = job
+        self._tone      = tone
         
         self._introduction  = ""
         self._lead          = ""

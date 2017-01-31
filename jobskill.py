@@ -7,7 +7,7 @@ class JobSkill(object):
 
     def add_response(self, response):
         self._responses.append(response)
-        
+
     def __str__(self):
         return random.choice(self._responses)
         

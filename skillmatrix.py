@@ -8,6 +8,12 @@ class SkillMatrix(object):
         self._position  = position
         self._matrix    = {}
         self.populate_skills()
+        
+    def get_name(self):
+        return self._name
+        
+    def get_position(self):
+        return self._position
 
     def add_skill(self, reference, skill):
         if (self._matrix.has_key(reference)):

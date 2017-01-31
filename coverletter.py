@@ -49,16 +49,36 @@ class CoverLetter(object):
         
     def compile(self):
         self.populate_phrases()
-        self.add_to_content(self.get_introduction())
+        self.add_to_content(self.get_introduction() 
+            % (self._skillset.get_name(), self._skillset.get_position()))
         self.add_to_content("\n\n")
-        self.add_to_content(self.get_lead())
-        self.add_to_content("\n\n")
-        self.add_to_content(self.get_middling())
-        self.add_to_content("\n\n")
-        self.add_to_content(self.get_hook())
-        self.add_to_content("\n\n")
-        self.add_to_content(self.get_close())
         
+        stage = 1
+        for skill in self.get_matching_skills():
+            if (stage == 1):
+                self.add_to_content("lead: %s\n" % (skill))
+                self.add_to_content(self.get_lead())
+                self.add_to_content("\n\n")
+                stage = 2
+            elif (stage == 2):
+                self.add_to_content("middling: %s\n" % (skill))
+                self.add_to_content(self.get_middling())
+                self.add_to_content("\n\n")
+                stage = 3
+            elif (stage == 3):
+                self.add_to_content("hook: %s\n" % (skill))
+                self.add_to_content(self.get_hook())
+                self.add_to_content("\n\n")
+                stage = 4
+            elif (stage == 4):
+                self.add_to_content("close: %s\n" % (skill))
+                self.add_to_content(self.get_close())
+                self.add_to_content("\n\n")
+                stage = 5
+            else:
+                self.add_to_content("supp:")
+                self.add_to_content("*")
+
         # end content
 
     def add_to_content(self, text):

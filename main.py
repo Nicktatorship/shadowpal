@@ -19,6 +19,7 @@ my_skills = SkillMatrix(tone=tone, name="Bob", position="Senior Biscuit")
 my_new_job = JobListing(company="Miracle Workers", title="Grand Bunny", skills=["sportsing", "pizza", "soda", "dancing"])
 my_cover_letter = CoverLetter(job=my_new_job, skillset=my_skills, tone=tone)
 
-print(my_cover_letter.get_content() % ("Bob", "pelican", "dance", "ever", "skills", "thrills", "chills", "pills."))
+print(my_cover_letter.get_content())
+    #% ("dance", "ever", "skills", "thrills", "chills", "pills."))
 
     

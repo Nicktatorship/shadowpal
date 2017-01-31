@@ -1,0 +1,10 @@
+intro,"My name is %s and I am a %s.",formal
+intro,"My name is %s and I am a %s.",informal
+lead,"I can %s and have been doing for %s.",formal
+lead,"I can %s and have been doing for %s.",informal
+middling,"I have %s with %s and %s.",formal
+middling,"I have %s with %s and %s.",informal
+hook,"I continue to pursue excellence in %s",formal
+hook,"I am excited about %s",informal
+close,"Thanks",formal
+close,"Thank you",informal

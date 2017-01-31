@@ -2,8 +2,10 @@ from jobskill import JobSkill
 import csv
 
 class SkillMatrix(object):
-    def __init__(self, tone="formal"):
+    def __init__(self, name="Joe", position="VP", tone="formal"):
         self._tone      = tone
+        self._name      = name
+        self._position  = position
         self._matrix    = {}
         self.populate_skills()
 

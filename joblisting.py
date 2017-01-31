@@ -12,3 +12,4 @@ class JobListing(object):
         
     def get_company(self):
         return self._company
+

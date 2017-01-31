@@ -16,11 +16,11 @@ class CoverLetter(object):
         csvfile = open('fills.csv')
         csvreader = csv.reader(csvfile, delimiter=',', quotechar='"')
         for row in csvreader:
-            if (self._tone == row[2].strip()):
+            if (self._tone == row[1].strip()):
                 if (self._phrases.has_key(row[0])):
-                    self._phrases[row[0]].append(row[1].strip('"'))
+                    self._phrases[row[0]].append(row[2].strip('"'))
                 else:
-                    self._phrases[row[0]] = [row[1].strip('"')]
+                    self._phrases[row[0]] = [row[2].strip('"')]
 
     def get_matching_skills(self):
         match_list = list(set(self._job.get_skills()) & set(self._skillset.list_skills()))

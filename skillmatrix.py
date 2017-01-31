@@ -25,8 +25,8 @@ class SkillMatrix(object):
         csvfile = open('quals.csv')
         csvreader = csv.reader(csvfile, delimiter=',', quotechar='"')
         for row in csvreader:
-            if (self._tone == row[2].strip()):
-                self.add_skill(row[0], row[1].strip('"'))
+            if (self._tone == row[1].strip()):
+                self.add_skill(row[0], row[2].strip('"'))
 
     def get_skill(self, reference):
         if (self._matrix.has_key(reference)):

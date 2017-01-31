@@ -1,10 +1,10 @@
-intro,"My name is %s and I am a %s.",formal
-intro,"My name is %s and I am a %s.",informal
-lead,"I can %s and have been doing for %s.",formal
-lead,"I can %s and have been doing for %s.",informal
-middling,"I have %s with %s and %s.",formal
-middling,"I have %s with %s and %s.",informal
-hook,"I continue to pursue excellence in %s",formal
-hook,"I am excited about %s",informal
-close,"Thanks",formal
-close,"Thank you",informal
+intro,formal,"My name is %s and I am a %s.",2
+intro,informal,"My name is %s and I am a %s.",2
+lead,formal,"I can %s and have been doing for %s.",2
+lead,informal,"I can %s and have been doing for %s.",2
+middling,formal,"I have %s with %s and %s.",3
+middling,informal,"I have %s with %s and %s.",3
+hook,formal,"I continue to pursue excellence in %s",1
+hook,informal,"I am excited about %s",1
+close,formal,"Thanks",0
+close,informal,"Thank you",0

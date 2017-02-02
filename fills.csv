@@ -1,9 +1,9 @@
 intro,formal,"My name is %s and I am a %s.",2
 intro,informal,"My name is %s and I am a %s.",2
-lead,formal,"I can %s and have been doing for %s.",2
-lead,informal,"I can %s and have been doing for %s.",2
-middling,formal,"I have %s with %s and %s.",3
-middling,informal,"I have %s with %s and %s.",3
+lead,formal,"I can %s and have been doing %s for ages.",2
+lead,informal,"I can %s and have been doing %s since forever.",2
+middling,formal,"I have %s with %s.",2
+middling,informal,"I know %s and can %s.",2
 hook,formal,"I continue to pursue excellence in %s",1
 hook,informal,"I am excited about %s",1
 close,formal,"Thanks",0

@@ -15,18 +15,18 @@ class SkillMatrix(object):
     def get_position(self):
         return self._position
 
-    def add_skill(self, reference, skill):
+    def add_skill(self, reference, skill, supplemental=""):
         if (self._matrix.has_key(reference)):
-            self._matrix[reference].add_response(skill)
+            self._matrix[reference].add_response(skill, supplemental)
         else:
-            self._matrix[reference] = JobSkill(skill)
+            self._matrix[reference] = JobSkill(skill, supplemental)
         
     def populate_skills(self):
         csvfile = open('quals.csv')
         csvreader = csv.reader(csvfile, delimiter=',', quotechar='"')
         for row in csvreader:
             if (self._tone == row[1].strip()):
-                self.add_skill(row[0], row[2].strip('"'))
+                self.add_skill(row[0], row[2].strip('"'), row[3].strip('"'))
 
     def get_skill(self, reference):
         if (self._matrix.has_key(reference)):

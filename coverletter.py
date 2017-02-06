@@ -3,6 +3,7 @@ from joblisting import JobListing
 from paragraph import Paragraph
 from random import shuffle
 
+import random
 import csv
 
 class CoverLetter(object):
@@ -52,9 +53,7 @@ class CoverLetter(object):
                 stage = 4
             elif (stage == 4):
                 self.add_to_content(self.parse_phrase("close", (self._skillset.get_skill(skill).get_response(), self._skillset.get_skill(skill).get_supplement())))
-                stage = 5
-            else:
-                self.add_to_content("*")
+                stage = random.choice([1, 2, 3, 4])
 
         # end content
 

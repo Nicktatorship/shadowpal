@@ -27,17 +27,22 @@ class CoverLetter(object):
 
     def get_matching_skills(self):
         match_list = list(set(self._job.get_skills()) & set(self._skillset.list_skills()))
-        # shuffle(match_list)
+        shuffle(match_list)
         return match_list
 
     def parse_phrase(self, key="intro", subs=[]):
         return self._phrases[key].get_parsed_content(subs)
         
     def compile(self):
+        closing   = ""
+        has_close = False
+        
         self.populate_phrases()
         self.add_to_content(self.parse_phrase("intro", (
                 self._skillset.get_name(), 
-                self._skillset.get_position()
+                self._skillset.get_position(),
+                self._job.get_title(),
+                self._job.get_company()
             )))
 
         stage = 1
@@ -50,12 +55,18 @@ class CoverLetter(object):
                 stage = 3
             elif (stage == 3):
                 self.add_to_content(self.parse_phrase("hook", (self._skillset.get_skill(skill).get_supplement(),)))
-                stage = 4
+                if (has_close):
+                    stage = 1
+                else:
+                    stage = 4
             elif (stage == 4):
-                self.add_to_content(self.parse_phrase("close", (self._skillset.get_skill(skill).get_response(), self._skillset.get_skill(skill).get_supplement())))
-                stage = random.choice([1, 2, 3, 4])
+                has_close = True
+                closing = self.parse_phrase("close", (self._skillset.get_skill(skill).get_response(), self._skillset.get_skill(skill).get_supplement()))
+                stage = 1
 
         # end content
+        if (has_close):
+            self.add_to_content(closing)
 
     def add_to_content(self, text):
         self._content += text

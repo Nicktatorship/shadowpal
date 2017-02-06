@@ -3,18 +3,29 @@ import random
 class JobSkill(object):
     def __init__(self, response="", supplement=""):
         self._responses     = [response]
-        self._supplement    = [supplement]
+        self._response      = response
+        self._supplements   = [supplement]
+        self._supplement    = supplement
         self._scale     = 1
 
     def add_response(self, response="", supplement=""):
-        self._responses.append(response)
-        self._supplement.append(supplement)
-
+        if response != "":
+            self._responses.append(response)
+            
+        if supplement != "":
+            self._supplements.append(supplement)
+            
+        self._response      = random.choice(self._responses)
+        self._supplement    = random.choice(self._supplements)
+        
     def __str__(self):
-        return random.choice(self._responses)
+        return self.get_response()
+        
+    def get_response(self):
+        return self._response
         
     def get_supplement(self):
-        return random.choice(self._supplement)
+        return self._supplement
 
     ''' An adjective for skill strength, scale from 1 to 5 '''
     def get_scale(self):

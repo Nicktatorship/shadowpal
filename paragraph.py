@@ -16,11 +16,16 @@ class Paragraph(object):
     def get_inserts(self):
         return self._phrase
         
+    def get_slots(self):
+        return self._phrase.count("%s")
+        
     def get_parsed_content(self, subs=()):
-        if (self._positions == 0):
+        if (self.get_slots() == 0):
             return (self._phrase + '\n')
-        elif (self._positions == len(subs)):
+        elif (self.get_slots() == len(subs)):
             return ((self._phrase) % (subs)) + '\n'
+        elif (self.get_slots() == 1):
+            return ((self._phrase) % (subs[0])) + '\n'
         else:
             return (self._phrase + '\n')
 

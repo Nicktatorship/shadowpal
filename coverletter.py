@@ -20,7 +20,7 @@ class CoverLetter(object):
         for row in csvreader:
             if (self._tone == row[1].strip()):
                 if (self._phrases.has_key(row[0])):
-                    self._phrases[row[0]].add_phrase(row[2].strip('"'), row[3].strip())
+                    self._phrases[row[0]].add_phrase(row[2].strip('"'))
                 else:
                     self._phrases[row[0]] = Paragraph(row[2].strip('"'), row[3].strip())
 
@@ -42,23 +42,18 @@ class CoverLetter(object):
         stage = 1
         for skill in self.get_matching_skills():
             if (stage == 1):
-                # self.add_to_content("lead: %s\n" % (skill))
-                self.add_to_content(self.parse_phrase("lead", (skill, self._skillset.get_skill(skill).get_supplement())))
+                self.add_to_content(self.parse_phrase("lead", (self._skillset.get_skill(skill).get_response(), self._skillset.get_skill(skill).get_supplement())))
                 stage = 2
             elif (stage == 2):
-                # self.add_to_content("middling: %s\n" % (skill))
-                self.add_to_content(self.parse_phrase("middling", (skill, self._skillset.get_skill(skill).get_supplement())))
+                self.add_to_content(self.parse_phrase("middling", (self._skillset.get_skill(skill).get_response(), self._skillset.get_skill(skill).get_supplement())))
                 stage = 3
             elif (stage == 3):
-                # self.add_to_content("hook: %s\n" % (skill))
                 self.add_to_content(self.parse_phrase("hook", (self._skillset.get_skill(skill).get_supplement(),)))
                 stage = 4
             elif (stage == 4):
-                # self.add_to_content("close: %s\n" % (skill))
-                self.add_to_content(self.parse_phrase("close", (skill, self._skillset.get_skill(skill).get_supplement())))
+                self.add_to_content(self.parse_phrase("close", (self._skillset.get_skill(skill).get_response(), self._skillset.get_skill(skill).get_supplement())))
                 stage = 5
             else:
-                # self.add_to_content("supp:")
                 self.add_to_content("*")
 
         # end content

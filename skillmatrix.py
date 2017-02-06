@@ -37,4 +37,9 @@ class SkillMatrix(object):
     def list_skills(self):
         return list(self._matrix.keys())
         
+    def show(self):
+        print("Available Skills:")
+        print(self.list_skills())
+        print("\n")
+    
         

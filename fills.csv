@@ -1,10 +1,20 @@
-intro,formal,"My name is %s and I am a %s.",2
-intro,informal,"My name is %s and I am a %s.",2
+intro,formal,"My name is %s and I am a %s. I would like to apply for the %s position at %s.",4
+intro,formal,"My name is %s and I currently work as a %s. I'm writing in regards to the %s position with %s that is currently being advertised."
+intro,informal,"Hey there! To kick things off - Hi, I'm %s. I'm currently employed as a %s, but saw the advertised %s role at %s and just had to apply.",4
+intro,informal,"Hi! I'm %s, a %s who is really interested in the %s role that's recruiting over at %s.",4
+intro,informal,"Hey there! I'm %s. I work as a %s at the moment, but I saw the advert for the %s job at %s, and had to throw this together.",4
 lead,formal,"I can %s and have been doing %s for ages.",2
+lead,formal,"With %s my %s",2
+lead,formal,"I have %s, and %s",2
+lead,formal,"I %s. Relevant to this is %s.",2
+lead,formal,"I have a sound understanding of %s and have %s.",2
 lead,informal,"I can %s and have been doing %s since forever.",2
+lead,informal,"I've been %s, and have %s.",2
 middling,formal,"I have %s with %s.",2
 middling,informal,"I know %s and can %s.",2
-hook,formal,"I continue to pursue excellence in %s",1
-hook,informal,"I am excited about %s",1
-close,formal,"Thanks",0
-close,informal,"Thank you",0
+hook,formal,"I continue to pursue excellence in %s and believe %s",2
+hook,formal,"I am focused on %s and look forward to %s",2
+hook,informal,"I am excited about %s - especially %s",2
+close,formal,"%s is good because of %s. Thank you for your consideration.",2
+close,informal,"Lastly %s is something I think of. Thank you",1
+close,informal,"%s is a big part of what I bring. Thanks a lot.",1

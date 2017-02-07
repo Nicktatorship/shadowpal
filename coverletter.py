@@ -54,7 +54,7 @@ class CoverLetter(object):
                 self.add_to_content(self.parse_phrase("middling", (self._skillset.get_skill(skill).get_response(), self._skillset.get_skill(skill).get_supplement())))
                 stage = 3
             elif (stage == 3):
-                self.add_to_content(self.parse_phrase("hook", (self._skillset.get_skill(skill).get_supplement(),)))
+                self.add_to_content(self.parse_phrase("hook", (self._skillset.get_skill(skill).get_response(), self._skillset.get_skill(skill).get_supplement())))
                 if (has_close):
                     stage = 1
                 else:
